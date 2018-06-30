@@ -2,7 +2,7 @@
 
 ### Compression algorithm based on converting groups of charectars into graphical formats.
 
-#### ⚠CGSF is still in alpha, it can be very buggy and unoptomized. Updates will come.⚠️
+#### ⚠CGSF is still in alpha, it cmay have bugs. Updates will come.⚠️
 
 ##### CGSF is a command line based program, no gui is currently available.
 
