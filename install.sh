@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$EUID" -ne 0 ]
+  then echo "Please run install script as root!"
+  exit
+fi
+
 mkdir ~/.local/share/CGSF
 cd ~/.local/share/CGSF
 wget https://gitlab.com/mbednarek360/CGSF/-/archive/master/CGSF-master.zip
