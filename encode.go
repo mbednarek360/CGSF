@@ -1,5 +1,6 @@
 package main
 
+//import packages
 import (
 	"fmt"
 	"io/ioutil"
@@ -9,18 +10,31 @@ import (
 	"image"
 	"image/color"
 	"image/png"
+	"strconv"
 )
 
 func main() {
-	//clear terminal and assign arguements
-  system("clear")
+	//assign arguements
   inFile := os.Args[1]
-  var outFile = os.Args[2]
+  outFile := os.Args[2]
+
+	//print message
+		if isWindows() {
+			system("cls")
+		}else {
+			system("clear")
+		}
+		fmt.Println("Reading input file...")
 
 	//open input file
   inBytes, err := ioutil.ReadFile(inFile)
   if err != nil {
-		fmt.Println("Could not open input file!")
+		if isWindows() {
+			system("cls")
+		}else {
+			system("clear")
+		}
+		fmt.Println("Could not read input file!")
 		os.Exit(2)
 	}
   inText := string(inBytes)
@@ -29,6 +43,14 @@ func main() {
 	for l := 0; l < (len(inText) % 3); l++ {
 		inText += string(0)
 	}
+
+	//print message
+		if isWindows() {
+			system("cls")
+		}else {
+			system("clear")
+		}
+		fmt.Println("Compressing...")
 
 	//create new image
 	img := image.NewRGBA(image.Rect(0, 0, (len(inText)/3), 1))
@@ -42,10 +64,7 @@ func main() {
 		//every three chars draw pixel
     if i % 3 == 0 && i > 0 {
       n = 0
-      //fmt.Println(i/3)
-			fmt.Println(val)
 			img.Set(((i / 3)-1), 0, color.RGBA{uint8(val[0]), uint8(val[1]), uint8(val[2]), 255})
-
     }
 		//get ascii value of char
     if i < len(inText) {
@@ -60,20 +79,13 @@ f, _ := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE, 0600)
 defer f.Close()
 png.Encode(f, img)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//print message
+if isWindows() {
+	system("cls")
+}else {
+	system("clear")
+}
+fmt.Println("Finished compression to " + outFile + ".")
 }
 
 //run system command
@@ -83,4 +95,14 @@ func system(cmd string, arg ...string) {
         log.Fatal(err)
     }
     fmt.Println(string(out))
+}
+
+//get os
+func isWindows() bool {
+    return os.PathSeparator == '\\' && os.PathListSeparator == ';'
+}
+
+//convert float to string
+func FloatToString(input_num float64) string {
+    return strconv.FormatFloat(input_num, 'f', 6, 64)
 }
