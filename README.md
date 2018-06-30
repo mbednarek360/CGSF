@@ -4,8 +4,17 @@
 
 #### ⚠CGSF is still in alpha, it can be very buggy and unoptomized. Updates will come.⚠️
 
-##### CGSF is a command line based program written in Go.
-##### Encoding takes a file input and a file output arguement.
+##### CGSF is a command line based program, no gui is currently available.
+
+---
+
+Encoding takes a file input and a file output arguement.
 
 Ex:
 `cgsf-encode input.txt output.cgsf`
+
+
+Decoding a file requires a similar process.
+
+Ex:
+`cgsf-decode input.cgsf output.txt`
