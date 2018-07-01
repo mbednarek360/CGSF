@@ -7,6 +7,15 @@
 ##### CGSF is a command line based program, no gui is currently available.
 
 ---
+To install, download and run install.sh.
+
+`sudo sh install.sh`
+
+
+To uninstall, run install.sh again located in the CGSF directory.
+
+`sudo sh ~/.local/share/CGSF/install.sh`
+---
 
 Encoding takes a file input and a file output arguement.
 
