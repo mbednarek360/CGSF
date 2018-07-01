@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd ~/.local/share/CGSF
-
-./decode $1 $2
