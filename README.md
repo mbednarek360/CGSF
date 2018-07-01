@@ -1,6 +1,6 @@
 # CGSF
 
-### Compression algorithm based on converting groups of charectars into graphical formats.
+### Text compression algorithm based on converting groups of charectars into graphical formats.
 
 #### ⚠CGSF is still in alpha, it cmay have bugs. Updates will come.⚠️
 
