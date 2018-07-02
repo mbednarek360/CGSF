@@ -4,7 +4,7 @@
 
 #### ⚠CGSF is still in alpha, it may have bugs. Updates will come.⚠️
 
-##### CGSF is a command line based program, no gui is currently available.
+##### CGSF is a command line based program, no gui is currently available. It tends to work much better compressing large files. It is also faster than most other compression algorithms.
 
 ---
 To install, download and run install.sh.
