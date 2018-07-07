@@ -48,7 +48,7 @@ if [ -d ~/.local/share/CGSF ]; then
   done
 fi
 
-if [ ! -d ~/.local/share/CGSF ]; then
+if [ ! -d /home/"$USER"/share/CGSF ]; then
   while true; do
     read -p "Are you sure you want to install this program?" yn
     case $yn in
