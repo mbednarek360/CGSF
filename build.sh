@@ -1,3 +1,3 @@
 #!/bin/sh
-go build cgsf-decode.go
-go build cgsf-encode.go
+go build decode.go
+go build encode.go
