@@ -3,7 +3,7 @@ package main
 //import packages
 import (
 	"fmt"
-  "os"
+    "os"
 	"image/png"
 	"log"
 	"strconv"
